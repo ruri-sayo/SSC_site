@@ -26,12 +26,12 @@
 
         /* ヒーローセクションのグラデーション */
         .hero-gradient {
-            background: linear-gradient(90deg, #002A5B 0%, rgba(0, 42, 91, 0.8) 50%, rgba(0, 42, 91, 0.3) 100%);
+            background: linear-gradient(90deg, #002A5B 0%, rgba(0, 42, 91, 0.8) 5%, rgba(0, 42, 91, 0.3) 10%);
         }
 
         /* ヒーロー背景画像用のクラス */
         .hero-background-image {
-            background-image: url('https://placehold.co/1920x1080/002A5B/FFFFFF?text=Digital+Transformation+for+Future'); /* ここを差し替える */
+            background-image: url('image/header_image.avif'); 
             background-size: cover;
             background-position: center;
         }
@@ -44,7 +44,7 @@
             <div class="flex justify-between items-center h-20">
                 <!-- ロゴ --><div class="flex-shrink-0">
                     <a href="#" class="flex items-center">
-                        <span class="text-2xl font-black text-heavy-blue">SSC</span>
+                        <span class="text-2xl font-black text-heavy-blue">SSC |</span>
                         <span class="text-xl font-bold text-gray-700 ml-2">Sayo Social Connect</span>
                     </a>
                 </div>
@@ -66,10 +66,10 @@
         </div>
         
         <!-- モバイル向けメニュー (非表示) --><div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="#about" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">企業情報</a>
-            <a href="#business" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">事業内容</a>
-            <a href="#solutions" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">ソリューション</a>
-            <a href="#recruit" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">採用情報</a>
+            <a href="pages/kigyoujyouhou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">企業情報</a>
+            <a href="pages/jigyounaiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">事業内容</a>
+            <a href="pages/solucion.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">ソリューション</a>
+            <a href="pages/saiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">採用情報</a>
             <a href="#contact" class="block px-4 py-3 bg-heavy-blue text-white font-bold text-center m-2 rounded-full">お問い合わせ</a>
         </div>
     </header>
@@ -77,10 +77,10 @@
     <!-- タブ形式のナビゲーション --><nav class="bg-heavy-blue text-white shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-start md:justify-center space-x-0 md:space-x-8 overflow-x-auto py-3">
-                <a href="#about" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">企業情報</a>
-                <a href="#business" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">事業内容</a>
-                <a href="#solutions" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">ソリューション</a>
-                <a href="#recruit" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">採用情報</a>
+                <a href="pages/kigyoujyouhou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">企業情報</a>
+                <a href="pages/jigyounaiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">事業内容</a>
+                <a href="pages/solucion.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">ソリューション</a>
+                <a href="pages/saiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">採用情報</a>
             </div>
         </div>
     </nav>
@@ -106,27 +106,30 @@
 
         <!-- 3. お知らせ (News) --><section class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-center text-heavy-blue mb-8">お知らせ</h2>
+                <h2 class="text-3xl font-bold text-center text-heavy-blue mb-8">お知らせ（新着）</h2>
                 <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
                     <ul class="divide-y divide-gray-200">
                         <li class="flex flex-col sm:flex-row p-4 hover:bg-gray-50 transition duration-300">
-                            <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">2025.11.01</span>
+                            <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">2025.10.26</span>
                             <span class="flex-1 text-gray-800">
                                 <a href="#" class="hover:underline">コーポレートサイトをリニューアルしました。</a>
                             </span>
                         </li>
                         <li class="flex flex-col sm:flex-row p-4 hover:bg-gray-50 transition duration-300">
-                            <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">2025.10.15</span>
+                            <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">2025.10.16</span>
                             <span class="flex-1 text-gray-800">
-                                <a href="#" class="hover:underline">新サービス「Sayo Connect Platform」を提供開始</a>
+                                <a href="pages/oshirase/2025-9-16-CM.html" class="hover:underline">新サービス「城上コードメモ」を提供開始</a>
                             </span>
                         </li>
+                        <!--
+                        参考クラス
                         <li class="flex flex-col sm:flex-row p-4 hover:bg-gray-50 transition duration-300">
                             <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">2025.09.20</span>
                             <span class="flex-1 text-gray-800">
                                 <a href="#" class="hover:underline">「第10回 ITソリューションEXPO」出展のお知らせ</a>
                             </span>
                         </li>
+                        -->
                     </ul>
                     <div class="text-right p-4 bg-gray-50">
                         <a href="#" class="font-bold text-heavy-blue hover:text-accent-blue transition duration-300">
@@ -137,12 +140,16 @@
             </div>
         </section>
 
+     
+        
         <!-- 4. 事業内容 (Business Overview) --><section id="business" class="py-20 bg-white">
+            
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center text-heavy-blue mb-4">事業内容</h2>
                 <p class="text-center text-lg text-gray-600 mb-12">未来を繋ぐITソリューションで、社会に貢献します。</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
                     <!-- 事業カード 1 --><div class="group bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition duration-500">
                         <img src="https://placehold.co/600x400/00A0E9/FFFFFF?text=Enterprise+Solutions" alt="エンタープライズソリューション" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -188,8 +195,10 @@
                     </div>
                 </div>
             </div>
+            
         </section>
-        
+    
+
         <!-- 5. 企業情報 (About Us) --><section id="about" class="py-20 bg-heavy-blue text-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
@@ -296,17 +305,19 @@
                 <!-- サイトマップ 2 --><div>
                     <h5 class="text-gray-400 font-semibold mb-3">事業・ソリューション</h5>
                     <ul class="space-y-2 text-sm">
+                        <!--
                         <li><a href="#" class="hover:text-white">エンタープライズソリューション</a></li>
                         <li><a href="#" class="hover:text-white">クラウドインテグレーション</a></li>
                         <li><a href="#" class="hover:text-white">データサイエンス・AI</a></li>
                         <li><a href="#" class="hover:text-white">セキュリティコンサルティング</a></li>
+                         -->
                     </ul>
                 </div>
                 
                 <!-- サイトマップ 3 --><div>
                     <h5 class="text-gray-400 font-semibold mb-3">その他</h5>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white">お知らせ</a></li>
+                        <li><a href="#news" class="hover:text-white">お知らせ</a></li>
                         <li><a href="#" class="hover:text-white">採用情報</a></li>
                         <li><a href="#" class="hover:text-white">お問い合わせ</a></li>
                     </ul>
@@ -314,12 +325,14 @@
             </div>
             
             <div class="border-t border-gray-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <!--
                 <div class="text-sm space-x-4 mb-4 md:mb-0">
                     <a href="#" class="hover:text-white">サイトポリシー</a>
                     <a href="#" class="hover:text-white">プライバシーポリシー</a>
                 </div>
+                -->
                 <p class="text-sm text-gray-500">
-                    &copy; 2025 SSC Sayo Social Connect, Inc. (Demo Site)
+                    &copy; 2025 SSC Sayo Social Connect, Inc. (Demo)
                 </p>
             </div>
         </div>
