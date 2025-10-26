@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC Sayo Social Connect</title>
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Interフォントを基本に、日本語はNoto Sans JPを適用 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* カスタムカラー（重工系の堅実なネイビー） */
+        .bg-heavy-blue { background-color: #002A5B; }
+        .text-heavy-blue { color: #002A5B; }
+        .border-heavy-blue { border-color: #002A5B; }
+        
+        .bg-accent-blue { background-color: #00A0E9; }
+        .text-accent-blue { color: #00A0E9; }
+
+        /* ヒーローセクションのグラデーション */
+        .hero-gradient {
+            background: linear-gradient(90deg, #002A5B 0%, rgba(0, 42, 91, 0.8) 50%, rgba(0, 42, 91, 0.3) 100%);
+        }
+
+        /* ヒーロー背景画像用のクラス */
+        .hero-background-image {
+            background-image: url('https://placehold.co/1920x1080/002A5B/FFFFFF?text=Digital+Transformation+for+Future'); /* ここを差し替える */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- 1. ヘッダー --><header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- ロゴ --><div class="flex-shrink-0">
+                    <a href="#" class="flex items-center">
+                        <span class="text-2xl font-black text-heavy-blue">SSC</span>
+                        <span class="text-xl font-bold text-gray-700 ml-2">Sayo Social Connect</span>
+                    </a>
+                </div>
+                
+                <!-- PC向けナビゲーション (お問い合わせのみ残す) --><nav class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#contact" class="bg-heavy-blue text-white px-5 py-2 rounded-full font-bold hover:bg-opacity-80 transition duration-300">
+                        お問い合わせ
+                    </a>
+                </nav>
+                
+                <!-- モバイル向けメニューボタン --><div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- モバイル向けメニュー (非表示) --><div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#about" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">企業情報</a>
+            <a href="#business" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">事業内容</a>
+            <a href="#solutions" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">ソリューション</a>
+            <a href="#recruit" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">採用情報</a>
+            <a href="#contact" class="block px-4 py-3 bg-heavy-blue text-white font-bold text-center m-2 rounded-full">お問い合わせ</a>
+        </div>
+    </header>
+
+    <!-- タブ形式のナビゲーション --><nav class="bg-heavy-blue text-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-start md:justify-center space-x-0 md:space-x-8 overflow-x-auto py-3">
+                <a href="#about" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">企業情報</a>
+                <a href="#business" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">事業内容</a>
+                <a href="#solutions" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">ソリューション</a>
+                <a href="#recruit" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">採用情報</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ --><main>
+
+        <!-- 2. メインビジュアル (ヒーローセクション) --><section class="relative h-[60vh] min-h-[400px] max-h-[700px] w-full text-white overflow-hidden">
+            <!-- 背景画像（hero-background-image クラスを適用） --><div class="absolute inset-0 w-full h-full object-cover object-center hero-background-image filter brightness-50"></div>
+            
+            <!-- グラデーションオーバーレイ --><div class="absolute inset-0 hero-gradient"></div>
+            
+            <!-- キャッチコピー --><div class="relative container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4 tracking-wide">
+                    確かな未来。<br>
+                    あなたとわたしと。
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl">
+                    Sayoホールディングスの一角として確かな実力を持って、<br>
+                    ITソリューションを提供します。
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. お知らせ (News) --><section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-heavy-blue mb-8">お知らせ</h2>
+                <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+                    <ul class="divide-y divide-gray-200">
+                        <li class="flex flex-col sm:flex-row p-4 hover:bg-gray-50 transition duration-300">
+                            <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">2025.11.01</span>
+                            <span class="flex-1 text-gray-800">
+                                <a href="#" class="hover:underline">コーポレートサイトをリニューアルしました。</a>
+                            </span>
+                        </li>
+                        <li class="flex flex-col sm:flex-row p-4 hover:bg-gray-50 transition duration-300">
+                            <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">2025.10.15</span>
+                            <span class="flex-1 text-gray-800">
+                                <a href="#" class="hover:underline">新サービス「Sayo Connect Platform」を提供開始</a>
+                            </span>
+                        </li>
+                        <li class="flex flex-col sm:flex-row p-4 hover:bg-gray-50 transition duration-300">
+                            <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">2025.09.20</span>
+                            <span class="flex-1 text-gray-800">
+                                <a href="#" class="hover:underline">「第10回 ITソリューションEXPO」出展のお知らせ</a>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="text-right p-4 bg-gray-50">
+                        <a href="#" class="font-bold text-heavy-blue hover:text-accent-blue transition duration-300">
+                            お知らせ一覧へ &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 事業内容 (Business Overview) --><section id="business" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-heavy-blue mb-4">事業内容</h2>
+                <p class="text-center text-lg text-gray-600 mb-12">未来を繋ぐITソリューションで、社会に貢献します。</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 事業カード 1 --><div class="group bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition duration-500">
+                        <img src="https://placehold.co/600x400/00A0E9/FFFFFF?text=Enterprise+Solutions" alt="エンタープライズソリューション" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-heavy-blue mb-2">エンタープライズソリューション</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                基幹システムの開発から運用保守まで、企業のビジネスを加速させるIT戦略を支援します。
+                            </p>
+                            <a href="#" class="font-semibold text-accent-blue group-hover:underline">詳細を見る</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 事業カード 2 --><div class="group bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition duration-500">
+                        <img src="https://placehold.co/600x400/004080/FFFFFF?text=Cloud+Integration" alt="クラウドインテグレーション" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-heavy-blue mb-2">クラウドインテグレーション</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                クラウド導入から活用、最適化まで、お客様のDXを強力に推進します。
+                            </p>
+                            <a href="#" class="font-semibold text-accent-blue group-hover:underline">詳細を見る</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 事業カード 3 --><div class="group bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition duration-500">
+                        <img src="https://placehold.co/600x400/333333/FFFFFF?text=Data+Science+AI" alt="データサイエンス・AI" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-heavy-blue mb-2">データサイエンス・AI</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                データ分析からAIモデル開発まで、お客様の潜在的な価値を最大化します。
+                            </p>
+                            <a href="#" class="font-semibold text-accent-blue group-hover:underline">詳細を見る</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 事業カード 4 --><div class="group bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition duration-500">
+                        <img src="https://placehold.co/600x400/CC0000/FFFFFF?text=Security+Consulting" alt="セキュリティコンサルティング" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-heavy-blue mb-2">セキュリティコンサルティング</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                高度なセキュリティ技術と知見で、お客様の事業活動をあらゆる脅威から守ります。
+                            </p>
+                            <a href="#" class="font-semibold text-accent-blue group-hover:underline">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. 企業情報 (About Us) --><section id="about" class="py-20 bg-heavy-blue text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">企業情報</h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Sayo Social Connectは、Sayoホールディングスの一員として、<br class="hidden md:inline">
+                        お客様と社会の未来を繋ぐITソリューションを提供します。
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <div class="bg-blue-900 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-accent-blue mb-3">代表メッセージ</h3>
+                        <p class="text-gray-200">
+                            代表取締役からのご挨拶と、当社のビジョン・ミッションをご紹介します。
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-white hover:underline">詳細はこちら</a>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-accent-blue mb-3">会社概要</h3>
+                        <p class="text-gray-200">
+                            設立年月日、資本金、役員構成などの基本情報をご覧いただけます。
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-white hover:underline">詳細はこちら</a>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-accent-blue mb-3">沿革</h3>
+                        <p class="text-gray-200">
+                            Sayo Social Connectのこれまでの歩みをご紹介します。
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-white hover:underline">詳細はこちら</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ソリューション (Solutions - 事業内容と重複するため、ここでは強みに変更しつつ内容を刷新) --><section id="solutions" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-heavy-blue mb-4">私たちの提供するソリューション</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        お客様の課題を深く理解し、最適なITソリューションでビジネスを支援します。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="p-6 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-heavy-blue mb-3">DX推進支援</h3>
+                        <p class="text-gray-700 mb-4">
+                            レガシーシステムからの脱却、データ活用基盤の構築、業務プロセスのデジタル化など、お客様のDXジャーニーをトータルでサポートします。最新技術と業務知見で、新たな価値創造を実現します。
+                        </p>
+                        <a href="#" class="font-semibold text-accent-blue hover:underline">詳細を見る &rarr;</a>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-heavy-blue mb-3">システム開発・運用</h3>
+                        <p class="text-gray-700 mb-4">
+                            要件定義から設計、開発、テスト、そして運用保守まで、ライフサイクル全体にわたる高品質なシステム開発を提供します。お客様のニーズに合わせた柔軟な開発体制で、ビジネスを支えます。
+                        </p>
+                        <a href="#" class="font-semibold text-accent-blue hover:underline">詳細を見る &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 7. 採用情報 (Recruitment) --><section id="recruit" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between bg-white p-10 rounded-lg shadow-lg">
+                    <div class="mb-6 md:mb-0 md:w-3/5">
+                        <h2 class="text-3xl font-bold text-heavy-blue mb-3">採用情報</h2>
+                        <p class="text-lg text-gray-700">
+                            未来を共に創造する仲間を募集しています。あなたの「つながりたい」を、ここで実現しませんか。
+                        </p>
+                    </div>
+                    <div class="md:w-2/5 text-center md:text-right">
+                        <a href="#" class="inline-block bg-accent-blue text-white text-lg font-bold px-10 py-4 rounded-full hover:bg-opacity-80 transition duration-300 shadow-lg transform hover:scale-105">
+                            採用サイトへ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 8. フッター --><footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- ロゴ・住所 --><div>
+                    <h4 class="text-lg font-bold text-white mb-3">SSC Sayo Social Connect株式会社</h4>
+                    
+                </div>
+                
+                <!-- サイトマップ 1 --><div>
+                    <h5 class="text-gray-400 font-semibold mb-3">企業情報</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">ご挨拶</a></li>
+                        <li><a href="#" class="hover:text-white">会社概要</a></li>
+                        <li><a href="#" class="hover:text-white">沿革</a></li>
+                        <li><a href="#" class="hover:text-white">拠点一覧</a></li>
+                    </ul>
+                </div>
+
+                <!-- サイトマップ 2 --><div>
+                    <h5 class="text-gray-400 font-semibold mb-3">事業・ソリューション</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">エンタープライズソリューション</a></li>
+                        <li><a href="#" class="hover:text-white">クラウドインテグレーション</a></li>
+                        <li><a href="#" class="hover:text-white">データサイエンス・AI</a></li>
+                        <li><a href="#" class="hover:text-white">セキュリティコンサルティング</a></li>
+                    </ul>
+                </div>
+                
+                <!-- サイトマップ 3 --><div>
+                    <h5 class="text-gray-400 font-semibold mb-3">その他</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">お知らせ</a></li>
+                        <li><a href="#" class="hover:text-white">採用情報</a></li>
+                        <li><a href="#" class="hover:text-white">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm space-x-4 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-white">サイトポリシー</a>
+                    <a href="#" class="hover:text-white">プライバシーポリシー</a>
+                </div>
+                <p class="text-sm text-gray-500">
+                    &copy; 2025 SSC Sayo Social Connect, Inc. (Demo Site)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- モバイルメニュー用スクリプト --><script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+
