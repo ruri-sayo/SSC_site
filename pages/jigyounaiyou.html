@@ -7,7 +7,8 @@
     <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body {
@@ -21,47 +22,42 @@
 
         .bg-accent-blue { background-color: #00A0E9; }
         .text-accent-blue { color: #00A0E9; }
-
-        .hero-gradient {
-            background: linear-gradient(90deg, #002A5B 0%, rgba(0, 42, 91, 0.8) 5%, rgba(0, 42, 91, 0.3) 10%);
+        
+        /* カードホバー時の挙動 */
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .hero-background-image {
-            background-image: url('../image/header_image.avif');
-            background-size: cover;
-            background-position: center;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
 
-    <!-- 1. ヘッダー --><header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <!-- 1. ヘッダー -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- ロゴ --><div class="flex-shrink-0">
+                <div class="flex-shrink-0">
                     <a href="../index.html" class="flex items-center">
                         <span class="text-2xl font-black text-heavy-blue">SSC |</span>
                         <span class="text-xl font-bold text-gray-700 ml-2">Sayo Social Connect</span>
                     </a>
                 </div>
-
-                <!-- PC向けナビゲーション --><nav class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="#contact" class="bg-heavy-blue text-white px-5 py-2 rounded-full font-bold hover:bg-opacity-80 transition duration-300">
+                <nav class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#contact" class="bg-heavy-blue text-white px-5 py-2 rounded-full font-bold hover:bg-opacity-80 transition duration-300 shadow-md">
                         お問い合わせ
                     </a>
                 </nav>
-
-                <!-- モバイル向けメニューボタン --><div class="md:hidden">
+                <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
-
-        <!-- モバイル向けメニュー (非表示) --><div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-50">
             <a href="kigyoujyouhou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">企業情報</a>
             <a href="jigyounaiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">事業内容</a>
             <a href="solucion.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">ソリューション</a>
@@ -70,22 +66,238 @@
         </div>
     </header>
 
-    <!-- タブ形式のナビゲーション --><nav class="bg-heavy-blue text-white shadow-md">
+    <!-- タブ形式のナビゲーション -->
+    <nav class="bg-heavy-blue text-white shadow-md sticky top-20 z-40">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-start md:justify-center space-x-0 md:space-x-8 overflow-x-auto py-3">
+            <div class="flex justify-start md:justify-center space-x-0 md:space-x-8 overflow-x-auto py-3 scrollbar-hide">
                 <a href="kigyoujyouhou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">企業情報</a>
-                <a href="jigyounaiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">事業内容</a>
+                <a href="jigyounaiyou.html" class="block py-2 px-4 bg-blue-800 text-white rounded-md transition duration-300 whitespace-nowrap font-bold border-b-2 border-yellow-500">事業内容</a>
                 <a href="solucion.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">ソリューション</a>
                 <a href="saiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">採用情報</a>
             </div>
         </div>
     </nav>
-        作成中
-    <!-- メインコンテンツ --><main>
         
+    <!-- メインコンテンツ -->
+    <main class="flex-grow">
+
+        <!-- ページヘッダー -->
+        <div class="bg-gray-50 py-12 md:py-16 border-b border-gray-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl md:text-4xl font-black text-heavy-blue mb-4">事業内容</h1>
+                <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                    SSCは、伝統的な重工業で培った「堅実さ」と、予測不能な未来に対応する「柔軟な発想」を融合。<br>
+                    お客様のビジネスを、時に強引に、時に繊細に加速させます。
+                </p>
+            </div>
+        </div>
+
+        <!-- 1. エンタープライズ・ソリューション -->
+        <section class="py-20 border-b border-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="flex flex-col md:flex-row items-start gap-6 mb-12">
+                    <div class="bg-heavy-blue text-white p-4 rounded-lg shrink-0">
+                        <i class="fa-solid fa-building-columns text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">エンタープライズ・ソリューション</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            止まることが許されない基幹システム。私たちは「祈り」と「技術」の両輪で、システムの安定稼働をお約束します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 基幹システム開発 -->
+                    <div class="service-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:border-heavy-blue group">
+                        <h3 class="text-xl font-bold text-heavy-blue mb-4 flex items-center">
+                            <i class="fa-solid fa-code mr-2 text-accent-blue"></i> 基幹システム開発
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-loose mb-4">
+                            COBOLおじさんからRust若手エンジニアまで、世代を超えた多言語対応チームが担当。<br>
+                            「動いているコードには触れるな」という古の教えを守りつつ、隙を見て最新技術へのリプレースを画策します。
+                        </p>
+                        <ul class="list-disc list-inside text-xs text-gray-500 space-y-1">
+                            <li>レガシーコード解読サービス（考古学アプローチ）</li>
+                            <li>スパゲッティコードのパスタソース化（リファクタリング）</li>
+                        </ul>
+                    </div>
+
+                    <!-- 基幹システム運用・保守 -->
+                    <div class="service-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:border-heavy-blue group">
+                        <h3 class="text-xl font-bold text-heavy-blue mb-4 flex items-center">
+                            <i class="fa-solid fa-server mr-2 text-accent-blue"></i> 基幹システム運用・保守
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                                <h4 class="font-bold text-sm text-heavy-blue mb-2">System. 24時間自動監視</h4>
+                                <p class="text-xs text-gray-600">AIによる予兆検知と、自動化スクリプトによる即時復旧。機械に休みはありません。</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                                <h4 class="font-bold text-sm text-gray-700 mb-2">Human. 9時-18時 人力対応</h4>
+                                <p class="text-xs text-gray-600">人間らしい温かみのある対応は、労働基準法の範囲内で提供します。<br>
+                                <span class="text-red-500 text-[10px]">※時間外の呼び出しは、担当者の機嫌によりレスポンス速度が変動します。</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. クラウドインテグレーション -->
+        <section class="py-20 bg-gray-50 border-b border-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="flex flex-col md:flex-row items-start gap-6 mb-12">
+                    <div class="bg-accent-blue text-white p-4 rounded-lg shrink-0">
+                        <i class="fa-solid fa-cloud text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">クラウドインテグレーション</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            空（クラウド）にあるものは、いつか雨となって降ってくるかもしれません。<br>
+                            SSCは、晴れの日も嵐の日も、お客様のデータを守り、時に大胆に捨て去ります。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- 導入支援 -->
+                    <div class="service-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">クラウド導入支援</h3>
+                        <p class="text-gray-600 text-sm leading-loose">
+                            「とりあえずクラウド」という曖昧なオーダーにも、「なんとなくモダン」な構成で応えます。<br>
+                            オンプレミスへの郷愁を断ち切るための「サーバー供養」オプションもご用意。
+                        </p>
+                    </div>
+
+                    <!-- 活用講座 -->
+                    <div class="service-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">クラウド活用講座</h3>
+                        <p class="text-gray-600 text-sm leading-loose">
+                            「インスタンスって何？」「バケットってバケツ？」<br>
+                            そんな素朴な疑問からスタート。小学校の図工の時間のようなステップバイステップで、クラウドアーキテクチャを粘土細工感覚で学びます。
+                        </p>
+                    </div>
+
+                    <!-- 最適化（メインコンテンツ） -->
+                    <div class="service-card bg-gradient-to-br from-white to-blue-50 p-8 rounded-xl border-2 border-accent-blue shadow-lg lg:col-span-1 relative overflow-hidden">
+                        <div class="absolute -right-6 -top-6 bg-accent-blue text-white text-xs font-bold px-8 py-2 rotate-45 shadow-md">イチオシ</div>
+                        <h3 class="text-lg font-bold text-heavy-blue mb-4">
+                            <i class="fa-solid fa-trash-can mr-2"></i>クラウドお片付け
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-loose mb-4">
+                            クラウド破産を防ぐための最終兵器。<br>
+                            弊社の「認定お片付けアドバイザー」が、御社のストレージに巣食うデジタルゴミを徹底的に断捨離します。
+                        </p>
+                        <div class="bg-white p-3 rounded border border-gray-200 text-xs space-y-2">
+                            <p class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-yellow-500 mt-0.5"></i>
+                                <span><strong>ときめかないデータは即削除：</strong><br>誤って重要データを消しても、それは運命だったと諦めさせます。</span>
+                            </p>
+                            <p class="flex items-start gap-2">
+                                <i class="fa-solid fa-skull text-gray-400 mt-0.5"></i>
+                                <span><strong>上級アドバイザー（松コース）：</strong><br>「なぜこのログを残したんですか？」「不安だから？」「その不安がコストなんですよ」と、担当者を精神的に追い詰め、容量削減を実現します。</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. データサイエンス・AI -->
+        <section class="py-20 border-b border-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="flex flex-col md:flex-row items-start gap-6 mb-12">
+                    <div class="bg-purple-600 text-white p-4 rounded-lg shrink-0">
+                        <i class="fa-solid fa-brain text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">データサイエンス・AI</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            流行りのAIも弊社にお任せください。<br>
+                            高度な数学的モデルと、熟練エンジニアの「長年の勘」をハイブリッドした独自のアルゴリズムを提供します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="service-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm relative overflow-hidden">
+                         <i class="fa-solid fa-dice-d20 absolute -bottom-4 -right-4 text-9xl text-gray-100 -z-10"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">確率論的データ分析</h3>
+                        <p class="text-gray-600 text-sm leading-loose mb-4">
+                            ビッグデータ解析の結果が思わしくない場合、弊社独自の「100面体サイコロ（d100）」を用いた確率補正を行います。<br>
+                            中心極限定理の加護のもと、統計的に「ありえなくはない」数値を導き出します。
+                        </p>
+                    </div>
+
+                    <div class="service-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">AIモデル開発</h3>
+                        <p class="text-gray-600 text-sm leading-loose mb-4">
+                            お客様の業務フローを学習し、最適解を導き出すAIを構築。<br>
+                            ただし、AIが「働きたくない」と判断した場合の労働争議対応マニュアルもセットで納品いたします。
+                        </p>
+                        <p class="text-xs text-gray-500 text-right">※AIご機嫌取り講座は別料金です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. セキュリティコンサルティング -->
+        <section class="py-20 bg-gray-900 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="flex flex-col md:flex-row items-start gap-6 mb-12">
+                    <div class="bg-red-600 text-white p-4 rounded-lg shrink-0">
+                        <i class="fa-solid fa-shield-halved text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">セキュリティコンサルティング</h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            システムで最も脆弱なのは「人間」です。<br>
+                            SSCは、技術的な防御壁だけでなく、人の心の隙間を埋める（あるいは突く）コンサルティングを行います。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700">
+                        <h3 class="text-lg font-bold text-white mb-4">脆弱性診断</h3>
+                        <p class="text-gray-400 text-sm leading-loose">
+                            ポートスキャンからソーシャルエンジニアリングまで、あらゆる手段で御社のセキュリティホールを探します。<br>
+                            たまに社員に変装してオフィスに潜入し、パスワードを書いた付箋を貼っているPCを没収します。
+                        </p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700">
+                        <h3 class="text-lg font-bold text-white mb-4">「なぜなぜ」セキュリティ構築</h3>
+                        <p class="text-gray-400 text-sm leading-loose mb-4">
+                            事故が起きる前に、インシデントの芽を摘みます。<br>
+                            「なぜそのパスワードにしたの？」「なぜ二要素認証を面倒くさがったの？」「なぜ？」<br>
+                            担当者が泣き出すまで繰り返される「なぜなぜ分析」により、強固なセキュリティ意識（トラウマ）を植え付けます。
+                        </p>
+                        <span class="inline-block bg-red-900 text-red-200 text-xs px-2 py-1 rounded">精神的負荷：高</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-20 bg-heavy-blue text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    システム構築から運用、そして「お片付け」まで。
+                </h2>
+                <p class="text-blue-200 mb-10 text-lg">
+                    SSCにお任せください。責任を持って（だいたい）やり遂げます！
+                </p>
+                <a href="#contact" class="inline-block bg-white text-heavy-blue font-bold py-4 px-12 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg text-lg">
+                    恐れずに問い合わせる
+                </a>
+            </div>
+        </section>
+
     </main>
 
-    <!-- 8. フッター --><footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8">
+    <!-- 8. フッター -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
@@ -103,19 +315,16 @@
                 <div>
                     <h5 class="text-gray-400 font-semibold mb-3">事業・ソリューション</h5>
                     <ul class="space-y-2 text-sm">
-                        <!--
-                        <li><a href="#" class="hover:text-white">エンタープライズソリューション</a></li>
-                        <li><a href="#" class="hover:text-white">クラウドインテグレーション</a></li>
-                        <li><a href="#" class="hover:text-white">データサイエンス・AI</a></li>
-                        <li><a href="#" class="hover:text-white">セキュリティコンサルティング</a></li>
-                         -->
+                        <li><a href="jigyounaiyou.html" class="hover:text-white">エンタープライズ</a></li>
+                        <li><a href="jigyounaiyou.html" class="hover:text-white">クラウドインテグレーション</a></li>
+                        <li><a href="jigyounaiyou.html" class="hover:text-white">AI・データサイエンス</a></li>
                     </ul>
                 </div>
                 <div>
                     <h5 class="text-gray-400 font-semibold mb-3">その他</h5>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#news" class="hover:text-white">お知らせ</a></li>
-                        <li><a href="#" class="hover:text-white">採用情報</a></li>
+                        <li><a href="saiyou.html" class="hover:text-white">採用情報</a></li>
                         <li><a href="#" class="hover:text-white">お問い合わせ</a></li>
                     </ul>
                 </div>
@@ -128,13 +337,15 @@
         </div>
     </footer>
 
-    <!-- モバイルメニュー用スクリプト --><script>
+    <script>
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
     </script>
 </body>
 </html>
