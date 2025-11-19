@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業情報 | SSC Sayo Social Connect</title>
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Interフォントを基本に、日本語はNoto Sans JPを適用 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* カスタムカラー（重工系の堅実なネイビー） */
+        .bg-heavy-blue { background-color: #002A5B; }
+        .text-heavy-blue { color: #002A5B; }
+        .border-heavy-blue { border-color: #002A5B; }
+
+        .bg-accent-blue { background-color: #00A0E9; }
+        .text-accent-blue { color: #00A0E9; }
+
+        /* ヒーローセクションのグラデーション */
+        .hero-gradient {
+            background: linear-gradient(90deg, #002A5B 0%, rgba(0, 42, 91, 0.9) 100%);
+        }
+        
+        /* テーブルのスタイル調整 */
+        .info-table th {
+            background-color: #f8fafc;
+            color: #002A5B;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
+
+    <!-- 1. ヘッダー -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- ロゴ -->
+                <div class="flex-shrink-0">
+                    <a href="../index.html" class="flex items-center">
+                        <span class="text-2xl font-black text-heavy-blue">SSC |</span>
+                        <span class="text-xl font-bold text-gray-700 ml-2">Sayo Social Connect</span>
+                    </a>
+                </div>
+
+                <!-- PC向けナビゲーション (お問い合わせのみ残す) -->
+                <nav class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#contact" class="bg-heavy-blue text-white px-5 py-2 rounded-full font-bold hover:bg-opacity-80 transition duration-300 shadow-md">
+                        お問い合わせ
+                    </a>
+                </nav>
+
+                <!-- モバイル向けメニューボタン -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- モバイル向けメニュー (非表示) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-50">
+            <a href="kigyoujyouhou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">企業情報</a>
+            <a href="jigyounaiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">事業内容</a>
+            <a href="solucion.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">ソリューション</a>
+            <a href="saiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">採用情報</a>
+            <a href="#contact" class="block px-4 py-3 bg-heavy-blue text-white font-bold text-center m-2 rounded-full">お問い合わせ</a>
+        </div>
+    </header>
+
+    <!-- タブ形式のナビゲーション -->
+    <nav class="bg-heavy-blue text-white shadow-md sticky top-20 z-40">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-start md:justify-center space-x-0 md:space-x-8 overflow-x-auto py-3 scrollbar-hide">
+                <a href="kigyoujyouhou.html" class="block py-2 px-4 bg-blue-800 text-white rounded-md transition duration-300 whitespace-nowrap font-bold border-b-2 border-yellow-500">企業情報</a>
+                <a href="jigyounaiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">事業内容</a>
+                <a href="solucion.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">ソリューション</a>
+                <a href="saiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">採用情報</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="flex-grow">
+        
+        <!-- ページヘッダー -->
+        <div class="bg-gray-50 py-12 md:py-16 border-b border-gray-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl md:text-4xl font-black text-heavy-blue mb-2">企業情報</h1>
+                <p class="text-gray-500 text-sm md:text-base font-medium">COMPANY PROFILE</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+
+            <!-- 企業理念 -->
+            <section class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <span class="text-accent-blue font-bold tracking-widest text-sm uppercase">Philosophy</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">企業理念</h2>
+                </div>
+                
+                <div class="bg-white p-12 rounded-xl shadow-sm border border-gray-100 relative overflow-hidden">
+                    <!-- 装飾的な背景 -->
+                    <div class="absolute top-0 left-0 w-2 h-full bg-heavy-blue"></div>
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+
+                    <div class="relative z-10">
+                        <p class="text-3xl md:text-5xl font-serif text-heavy-blue font-medium leading-relaxed mb-6">
+                            「確かな未来。<br class="md:hidden">あなたと私と」
+                        </p>
+                        <p class="text-gray-600 leading-loose text-sm md:text-base max-w-2xl mx-auto">
+                            私たちは技術と対話を通じて、社会と人々の絆を深め、<br class="hidden md:inline">
+                            揺るぎない信頼に基づいた未来を創造します。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 代表挨拶（追加セクション） -->
+            <section class="max-w-5xl mx-auto">
+                <div class="mb-10 border-l-4 border-heavy-blue pl-4">
+                    <span class="text-accent-blue font-bold tracking-widest text-sm uppercase block mb-1">Top Message</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">代表挨拶</h2>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-10 items-start">
+                    <!-- 写真エリア（プレースホルダー） -->
+                    <div class="w-full md:w-1/3 shrink-0">
+                        <div class="aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden relative group border border-gray-200 flex items-end justify-center">
+                            <!-- ここに代表者の写真が入る想定 -->
+                            <i class="fa-solid fa-user text-9xl text-gray-300 translate-y-4"></i>
+                        </div>
+                        <div class="mt-5 text-center md:text-left">
+                            <p class="text-xs text-gray-500 font-bold mb-1 tracking-wide">代表取締役社長</p>
+                            <p class="text-2xl font-black text-heavy-blue font-serif">作用 瑠璃</p>
+                        </div>
+                    </div>
+
+                    <!-- 本文エリア -->
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-relaxed border-b border-gray-100 pb-4">
+                            新たな社会の基礎を、<br>共に作り上げましょう。
+                        </h3>
+                        <div class="space-y-6 text-gray-600 leading-loose text-justify text-sm md:text-base">
+                            <p>
+                                弊社は、始まりは、Sayo Heveay Industrialの情報部門でした。初期の頃は、新浜工場の一角で、ラップトップパソコンをパイプ椅子と折りたたみテーブルにおいて、ひっそりと自動化のスクリプトを作成していたのが始まりでした。
+                            </p>
+                            <p>
+                                それが、今となっては、立派なオフィスを持ち、社員数も増え、随分と立派になりました。<br>
+                                これからの時代、自動化、DXは必ず必要です。我々はSayoホールディングスだけに限らず、我々自身が蓄積したノウハウを社会へ還元したいと考えています。
+                            </p>
+                            <p class="font-bold text-heavy-blue pt-4 text-base md:text-lg">
+                                ぜひ、新たな社会の基礎を作りませんか？あなたの応募をお待ちしています。
+                            </p>
+                        </div>
+                        
+                        <!-- 署名（本文内指定により重複する場合は調整可ですが、今回はデザイン的に配置） -->
+                        <div class="mt-8 text-right font-serif text-lg text-gray-800">
+                            代表取締役社長 作用 瑠璃
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 企業情報（表敬式・テーブルレイアウト） -->
+            <section class="max-w-4xl mx-auto">
+                <div class="mb-8 border-l-4 border-heavy-blue pl-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">会社概要</h2>
+                </div>
+
+                <div class="bg-white shadow-sm rounded-lg overflow-hidden border border-gray-200">
+                    <table class="w-full text-left border-collapse info-table">
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="flex flex-col md:table-row">
+                                <th class="py-4 px-6 font-bold w-full md:w-1/4 block md:table-cell">社名</th>
+                                <td class="py-4 px-6 block md:table-cell">SSC Sayo Social Connect</td>
+                            </tr>
+                            <tr class="flex flex-col md:table-row">
+                                <th class="py-4 px-6 font-bold w-full md:w-1/4 block md:table-cell">所在地</th>
+                                <td class="py-4 px-6 block md:table-cell">
+                                    〒100-0000<br>
+                                    首都中央市街第12区 第8ビル 22階
+                                </td>
+                            </tr>
+                            <tr class="flex flex-col md:table-row">
+                                <th class="py-4 px-6 font-bold w-full md:w-1/4 block md:table-cell">設立</th>
+                                <td class="py-4 px-6 block md:table-cell">2024年9月</td>
+                            </tr>
+                            <tr class="flex flex-col md:table-row">
+                                <th class="py-4 px-6 font-bold w-full md:w-1/4 block md:table-cell">代表者</th>
+                                <td class="py-4 px-6 block md:table-cell">代表取締役社長 作用 瑠璃</td>
+                            </tr>
+                            <tr class="flex flex-col md:table-row">
+                                <th class="py-4 px-6 font-bold w-full md:w-1/4 block md:table-cell">資本金</th>
+                                <td class="py-4 px-6 block md:table-cell">3,000万円</td>
+                            </tr>
+                            <tr class="flex flex-col md:table-row">
+                                <th class="py-4 px-6 font-bold w-full md:w-1/4 block md:table-cell">事業内容</th>
+                                <td class="py-4 px-6 block md:table-cell">
+                                    情報システム開発・運用<br>
+                                    社会インフラソリューション提供<br>
+                                    データ解析・コンサルティング
+                                </td>
+                            </tr>
+                            <tr class="flex flex-col md:table-row">
+                                <th class="py-4 px-6 font-bold w-full md:w-1/4 block md:table-cell">従業員数</th>
+                                <td class="py-4 px-6 block md:table-cell">500名（2025年時点）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 沿革 -->
+            <section class="max-w-4xl mx-auto">
+                <div class="mb-8 border-l-4 border-heavy-blue pl-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">沿革</h2>
+                </div>
+
+                <div class="relative border-l-2 border-gray-200 ml-4 md:ml-8 space-y-12">
+                    <!-- 2018 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-heavy-blue border-4 border-white shadow-sm"></div>
+                        <div class="flex flex-col md:flex-row md:items-baseline mb-2">
+                            <span class="text-xl font-black text-heavy-blue w-24 shrink-0">2018</span>
+                            <h3 class="text-lg font-bold text-gray-900">Sayo Heavy Industry 情報部として設立</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm">重工業分野におけるIT基盤の強化を目的に組織化。</p>
+                    </div>
+
+                    <!-- 2019 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 border-4 border-white shadow-sm"></div>
+                        <div class="flex flex-col md:flex-row md:items-baseline mb-2">
+                            <span class="text-xl font-black text-gray-500 w-24 shrink-0">2019</span>
+                            <h3 class="text-lg font-bold text-gray-900">FCR-1 システムで最優秀部門賞を受賞</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm">社内基幹システムの刷新プロジェクトが高く評価される。</p>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-heavy-blue border-4 border-white shadow-sm"></div>
+                        <div class="flex flex-col md:flex-row md:items-baseline mb-2">
+                            <span class="text-xl font-black text-heavy-blue w-24 shrink-0">2024</span>
+                            <h3 class="text-lg font-bold text-gray-900">Sayoホールディングスの設立に伴い、独立</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm">SSC Sayo Social Connectとして法人化。新たな事業展開を開始。</p>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent-blue border-4 border-white shadow-md"></div>
+                        <div class="flex flex-col md:flex-row md:items-baseline mb-2">
+                            <span class="text-xl font-black text-accent-blue w-24 shrink-0">2025</span>
+                            <h3 class="text-lg font-bold text-gray-900">「城上コードメモ」をリリース</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm">エンジニア向けナレッジ共有プラットフォームの提供を開始。</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 8. フッター -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- ロゴ・住所 -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-3">SSC Sayo Social Connect株式会社</h4>
+                </div>
+
+                <!-- サイトマップ 1 -->
+                <div>
+                    <h5 class="text-gray-400 font-semibold mb-3">企業情報</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">ご挨拶</a></li>
+                        <li><a href="#" class="hover:text-white">会社概要</a></li>
+                        <li><a href="#" class="hover:text-white">沿革</a></li>
+                        <li><a href="#" class="hover:text-white">拠点一覧</a></li>
+                    </ul>
+                </div>
+
+                <!-- サイトマップ 2 -->
+                <div>
+                    <h5 class="text-gray-400 font-semibold mb-3">事業・ソリューション</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">システム開発</a></li>
+                        <li><a href="#" class="hover:text-white">インフラ構築</a></li>
+                    </ul>
+                </div>
+
+                <!-- サイトマップ 3 -->
+                <div>
+                    <h5 class="text-gray-400 font-semibold mb-3">その他</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#news" class="hover:text-white">お知らせ</a></li>
+                        <li><a href="saiyou.html" class="hover:text-white">採用情報</a></li>
+                        <li><a href="#" class="hover:text-white">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2025 SSC Sayo Social Connect, Inc. (Demo)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- モバイルメニュー用スクリプト -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

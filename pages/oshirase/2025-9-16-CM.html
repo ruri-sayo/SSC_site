@@ -3,35 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSC Sayo Social Connect</title>
+    <title>お知らせ | SSC Sayo Social Connect</title>
     <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* Interフォントを基本に、日本語はNoto Sans JPを適用 */
         body {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        /* カスタムカラー（重工系の堅実なネイビー） */
         .bg-heavy-blue { background-color: #002A5B; }
         .text-heavy-blue { color: #002A5B; }
         .border-heavy-blue { border-color: #002A5B; }
-        
+
         .bg-accent-blue { background-color: #00A0E9; }
         .text-accent-blue { color: #00A0E9; }
 
-        /* ヒーローセクションのグラデーション */
         .hero-gradient {
             background: linear-gradient(90deg, #002A5B 0%, rgba(0, 42, 91, 0.8) 5%, rgba(0, 42, 91, 0.3) 10%);
         }
 
-        /* ヒーロー背景画像用のクラス */
         .hero-background-image {
-            background-image: url('image/header_image.avif'); 
+            background-image: url('../../image/header_image.avif');
             background-size: cover;
             background-position: center;
         }
@@ -43,18 +39,18 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- ロゴ --><div class="flex-shrink-0">
-                    <a href="#" class="flex items-center">
+                    <a href="../../index.html" class="flex items-center">
                         <span class="text-2xl font-black text-heavy-blue">SSC |</span>
                         <span class="text-xl font-bold text-gray-700 ml-2">Sayo Social Connect</span>
                     </a>
                 </div>
-                
-                <!-- PC向けナビゲーション (お問い合わせのみ残す) --><nav class="hidden md:flex md:items-center md:space-x-8">
+
+                <!-- PC向けナビゲーション --><nav class="hidden md:flex md:items-center md:space-x-8">
                     <a href="#contact" class="bg-heavy-blue text-white px-5 py-2 rounded-full font-bold hover:bg-opacity-80 transition duration-300">
                         お問い合わせ
                     </a>
                 </nav>
-                
+
                 <!-- モバイル向けメニューボタン --><div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -64,12 +60,12 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- モバイル向けメニュー (非表示) --><div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="pages/kigyoujyouhou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">企業情報</a>
-            <a href="pages/jigyounaiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">事業内容</a>
-            <a href="pages/solucion.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">ソリューション</a>
-            <a href="pages/saiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">採用情報</a>
+            <a href="../kigyoujyouhou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">企業情報</a>
+            <a href="../jigyounaiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">事業内容</a>
+            <a href="../solucion.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">ソリューション</a>
+            <a href="../saiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">採用情報</a>
             <a href="#contact" class="block px-4 py-3 bg-heavy-blue text-white font-bold text-center m-2 rounded-full">お問い合わせ</a>
         </div>
     </header>
@@ -77,30 +73,24 @@
     <!-- タブ形式のナビゲーション --><nav class="bg-heavy-blue text-white shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-start md:justify-center space-x-0 md:space-x-8 overflow-x-auto py-3">
-                <a href="pages/kigyoujyouhou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">企業情報</a>
-                <a href="pages/jigyounaiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">事業内容</a>
-                <a href="pages/solucion.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">ソリューション</a>
-                <a href="pages/saiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">採用情報</a>
+                <a href="../kigyoujyouhou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">企業情報</a>
+                <a href="../jigyounaiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">事業内容</a>
+                <a href="../solucion.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">ソリューション</a>
+                <a href="../saiyou.html" class="block py-2 px-4 text-white hover:bg-blue-700 hover:text-white rounded-md transition duration-300 whitespace-nowrap">採用情報</a>
             </div>
         </div>
     </nav>
 
     <!-- メインコンテンツ --><main>
-        <h1>城上コードメモ解説のお知らせ</h1>
-        この度、城上コードメモを解説することになりました。
-        サービスのURLは以下です。
-
     </main>
 
     <!-- 8. フッター --><footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- ロゴ・住所 --><div>
+                <div>
                     <h4 class="text-lg font-bold text-white mb-3">SSC Sayo Social Connect株式会社</h4>
-                    
                 </div>
-                
-                <!-- サイトマップ 1 --><div>
+                <div>
                     <h5 class="text-gray-400 font-semibold mb-3">企業情報</h5>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#" class="hover:text-white">ご挨拶</a></li>
@@ -109,8 +99,7 @@
                         <li><a href="#" class="hover:text-white">拠点一覧</a></li>
                     </ul>
                 </div>
-
-                <!-- サイトマップ 2 --><div>
+                <div>
                     <h5 class="text-gray-400 font-semibold mb-3">事業・ソリューション</h5>
                     <ul class="space-y-2 text-sm">
                         <!--
@@ -121,8 +110,7 @@
                          -->
                     </ul>
                 </div>
-                
-                <!-- サイトマップ 3 --><div>
+                <div>
                     <h5 class="text-gray-400 font-semibold mb-3">その他</h5>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#news" class="hover:text-white">お知らせ</a></li>
@@ -131,14 +119,7 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="border-t border-gray-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
-                <!--
-                <div class="text-sm space-x-4 mb-4 md:mb-0">
-                    <a href="#" class="hover:text-white">サイトポリシー</a>
-                    <a href="#" class="hover:text-white">プライバシーポリシー</a>
-                </div>
-                -->
                 <p class="text-sm text-gray-500">
                     &copy; 2025 SSC Sayo Social Connect, Inc. (Demo)
                 </p>
@@ -156,4 +137,3 @@
     </script>
 </body>
 </html>
-
