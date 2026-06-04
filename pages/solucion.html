@@ -157,38 +157,75 @@ permalink: /pages/solucion.html
             </div>
         </section>
 
-        <!-- 4. 事例紹介（調整中） -->
+        <!-- 4. 事例紹介 -->
         <section id="case-study" class="py-24 bg-white relative overflow-hidden">
-            <!-- 背景の工事現場テープ -->
-            <div class="absolute inset-0 opacity-5 pointer-events-none">
-                <div class="absolute top-0 left-0 w-[200%] h-20 bg-black -rotate-3 origin-top-left transform translate-y-10 translate-x-[-10%] construction-stripe"></div>
-                <div class="absolute bottom-0 right-0 w-[200%] h-20 bg-black -rotate-3 origin-bottom-right transform -translate-y-10 translate-x-[10%] construction-stripe"></div>
-            </div>
+            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent-blue via-cyan-300 to-yellow-300"></div>
 
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center relative z-10">
-                <span class="text-yellow-500 font-bold tracking-widest text-sm uppercase mb-4 block">Case Study</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10">導入事例</h2>
-                
-                <div class="bg-gray-50 rounded-2xl p-12 border-2 border-dashed border-gray-300 flex flex-col items-center justify-center">
-                    <div class="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 text-4xl mb-6 animate-bounce">
-                        <i class="fa-solid fa-helmet-safety"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-700 mb-4">Under Construction</h3>
-                    <p class="text-gray-500 mb-2">
-                        現在、あまりにも劇的な成功事例を整理しております。
-                    </p>
-                    <p class="text-gray-400 text-sm">
-                        （担当者が感動のあまり涙でキーボードが見えないため、執筆が遅れています）
-                    </p>
-                    <div class="mt-8 px-6 py-2 bg-yellow-400 text-white font-bold rounded text-sm transform -rotate-2 shadow-md inline-block">
-                        明日公開予定！
-                    </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+                <div class="text-center mb-12">
+                    <span class="text-accent-blue font-bold tracking-widest text-sm uppercase mb-4 block">Case Study</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">導入事例</h2>
+                    <p class="text-gray-600">公開できる範囲だけを、公開できそうな雰囲気で掲載しています。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <article class="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-8 border border-blue-100 shadow-sm">
+                        <p class="text-xs font-bold text-accent-blue tracking-widest mb-3">CASE 01 / MANUFACTURING</p>
+                        <h3 class="text-xl font-bold text-heavy-blue mb-4">新浜工場群 統合監視ダッシュボード</h3>
+                        <p class="text-gray-600 text-sm leading-loose mb-5">
+                            17種類のExcel、4種類の口頭報告、1つの謎のホワイトボードを統合。ライン停止時に社歌が鳴る問題を、穏やかなチャイムへ置換しました。
+                        </p>
+                        <div class="grid grid-cols-3 gap-3 text-center">
+                            <div class="bg-white rounded-lg p-3 border border-blue-100"><p class="text-2xl font-black text-heavy-blue">42%</p><p class="text-xs text-gray-500">確認工数削減</p></div>
+                            <div class="bg-white rounded-lg p-3 border border-blue-100"><p class="text-2xl font-black text-heavy-blue">9分</p><p class="text-xs text-gray-500">報告短縮</p></div>
+                            <div class="bg-white rounded-lg p-3 border border-blue-100"><p class="text-2xl font-black text-heavy-blue">0回</p><p class="text-xs text-gray-500">社歌暴発</p></div>
+                        </div>
+                    </article>
+
+                    <article class="bg-gradient-to-br from-white to-cyan-50 rounded-2xl p-8 border border-cyan-100 shadow-sm">
+                        <p class="text-xs font-bold text-accent-blue tracking-widest mb-3">CASE 02 / SECURITY</p>
+                        <h3 class="text-xl font-bold text-heavy-blue mb-4">第12区庁舎 トンネル効果セキュリティ診断</h3>
+                        <p class="text-gray-600 text-sm leading-loose mb-5">
+                            「なぜか通れる共有フォルダ」と「なぜか誰も知らない管理者ID」を調査。ポテンシャル障壁を厚くし、気合いで突破する文化を廃止しました。
+                        </p>
+                        <div class="grid grid-cols-3 gap-3 text-center">
+                            <div class="bg-white rounded-lg p-3 border border-cyan-100"><p class="text-2xl font-black text-heavy-blue">128</p><p class="text-xs text-gray-500">権限棚卸し</p></div>
+                            <div class="bg-white rounded-lg p-3 border border-cyan-100"><p class="text-2xl font-black text-heavy-blue">87%</p><p class="text-xs text-gray-500">付箋減少</p></div>
+                            <div class="bg-white rounded-lg p-3 border border-cyan-100"><p class="text-2xl font-black text-heavy-blue">厚め</p><p class="text-xs text-gray-500">障壁評価</p></div>
+                        </div>
+                    </article>
+
+                    <article class="bg-gradient-to-br from-white to-indigo-50 rounded-2xl p-8 border border-indigo-100 shadow-sm">
+                        <p class="text-xs font-bold text-accent-blue tracking-widest mb-3">CASE 03 / DATA</p>
+                        <h3 class="text-xl font-bold text-heavy-blue mb-4">営業会議用 未来予測レポート自動生成</h3>
+                        <p class="text-gray-600 text-sm leading-loose mb-5">
+                            先月の数字、担当者の表情、会議室の湿度をもとに、売上見込みを生成。予測が外れた場合も「別世界線では達成」と補足できる設計です。
+                        </p>
+                        <div class="grid grid-cols-3 gap-3 text-center">
+                            <div class="bg-white rounded-lg p-3 border border-indigo-100"><p class="text-2xl font-black text-heavy-blue">6h</p><p class="text-xs text-gray-500">資料短縮</p></div>
+                            <div class="bg-white rounded-lg p-3 border border-indigo-100"><p class="text-2xl font-black text-heavy-blue">3本</p><p class="text-xs text-gray-500">言い訳候補</p></div>
+                            <div class="bg-white rounded-lg p-3 border border-indigo-100"><p class="text-2xl font-black text-heavy-blue">中</p><p class="text-xs text-gray-500">予測自信度</p></div>
+                        </div>
+                    </article>
+
+                    <article class="bg-gradient-to-br from-white to-yellow-50 rounded-2xl p-8 border border-yellow-100 shadow-sm">
+                        <p class="text-xs font-bold text-accent-blue tracking-widest mb-3">CASE 04 / REFACTORING</p>
+                        <h3 class="text-xl font-bold text-heavy-blue mb-4">LUMOエネルギー利用型 旧基幹コード整理</h3>
+                        <p class="text-gray-600 text-sm leading-loose mb-5">
+                            誰も触れないコード領域に眠る保守性を励起。コメントアウトされた古代のif文を供養し、レビュー時の沈黙時間を短縮しました。
+                        </p>
+                        <div class="grid grid-cols-3 gap-3 text-center">
+                            <div class="bg-white rounded-lg p-3 border border-yellow-100"><p class="text-2xl font-black text-heavy-blue">31%</p><p class="text-xs text-gray-500">分岐削減</p></div>
+                            <div class="bg-white rounded-lg p-3 border border-yellow-100"><p class="text-2xl font-black text-heavy-blue">14体</p><p class="text-xs text-gray-500">古代if供養</p></div>
+                            <div class="bg-white rounded-lg p-3 border border-yellow-100"><p class="text-2xl font-black text-heavy-blue">低</p><p class="text-xs text-gray-500">レビュー反応性</p></div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- CTA -->
-        <section class="py-20 bg-heavy-blue text-center">
+        <section class="py-20 dark-readable text-center">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
                     御社の課題も、量子的に改善してみませんか？
