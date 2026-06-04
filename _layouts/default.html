@@ -23,6 +23,10 @@
         /* --- SSC Base Styles --- */
         body {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(0, 160, 233, 0.08), transparent 32rem),
+                radial-gradient(circle at top right, rgba(255, 214, 102, 0.12), transparent 28rem),
+                #ffffff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -34,13 +38,14 @@
 
         /* Tab Navigation Helper Classes */
         .nav-tab-active {
-            background-color: #1e40af; /* bg-blue-800 */
+            background: linear-gradient(135deg, #1e40af, #0284c7);
             border-bottom-width: 2px;
             border-color: #eab308; /* border-yellow-500 */
             font-weight: 700; /* font-bold */
+            box-shadow: 0 8px 24px rgba(0, 160, 233, 0.22);
         }
         .nav-tab-inactive:hover {
-            background-color: #1d4ed8; /* hover:bg-blue-700 */
+            background-color: rgba(29, 78, 216, 0.8);
         }
     </style>
     {% comment %} 各ページ個別のCSSがあればここに挿入 {% endcomment %}
@@ -53,7 +58,7 @@
 <body class="bg-white text-gray-800 flex flex-col min-h-screen">
 
     <!-- 1. ヘッダー -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <header class="bg-white/90 backdrop-blur border-b border-blue-100 sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- ロゴ -->
@@ -87,14 +92,13 @@
             <a href="{{ site.baseurl }}/pages/kigyoujyouhou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">企業情報</a>
             <a href="{{ site.baseurl }}/pages/jigyounaiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">事業内容</a>
             <a href="{{ site.baseurl }}/pages/solucion.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">ソリューション</a>
-            <a href="{{ site.baseurl }}/pages/saiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">88卒採用</a>
-            <a href="{{ site.baseurl }}/pages/intern.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">89卒インターン</a>
+            <a href="{{ site.baseurl }}/pages/saiyou.html" class="block px-4 py-3 text-gray-700 font-bold hover:bg-gray-100">採用情報</a>
             <a href="{{ site.baseurl }}/pages/toiawase.html" class="block px-4 py-3 bg-heavy-blue text-white font-bold text-center m-2 rounded-full">お問い合わせ</a>
         </div>
     </header>
 
     <!-- タブ形式のナビゲーション -->
-    <nav class="bg-heavy-blue text-white shadow-md sticky top-20 z-40">
+    <nav class="bg-gradient-to-r from-heavy-blue via-blue-800 to-sky-700 text-white shadow-md sticky top-20 z-40">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-start md:justify-center space-x-0 md:space-x-8 overflow-x-auto py-3 scrollbar-hide">
                 {% assign current = page.url %}
@@ -115,13 +119,8 @@
                 </a>
                 
                 <a href="{{ site.baseurl }}/pages/saiyou.html"
-                   class="block py-2 px-4 text-white rounded-md transition duration-300 whitespace-nowrap {% if current contains 'saiyou' %}nav-tab-active{% else %}nav-tab-inactive{% endif %}">
-                   88卒採用
-                </a>
-
-                <a href="{{ site.baseurl }}/pages/intern.html"
-                   class="block py-2 px-4 text-white rounded-md transition duration-300 whitespace-nowrap {% if current contains 'intern' %}nav-tab-active{% else %}nav-tab-inactive{% endif %}">
-                   89卒インターン
+                   class="block py-2 px-4 text-white rounded-md transition duration-300 whitespace-nowrap {% if current contains 'saiyou' or current contains 'shinsotsu' or current contains 'career' or current contains 'intern' %}nav-tab-active{% else %}nav-tab-inactive{% endif %}">
+                   採用情報
                 </a>
             </div>
         </div>
@@ -133,7 +132,7 @@
     </main>
 
     <!-- 8. フッター -->
-    <footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8 relative z-20">
+    <footer id="contact" class="bg-gradient-to-br from-gray-950 via-slate-900 to-blue-950 text-gray-300 pt-16 pb-8 relative z-20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
                 <div class="lg:col-span-2 space-y-3">
@@ -170,8 +169,7 @@
                     <h5 class="text-gray-400 font-semibold mb-3">その他</h5>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ site.baseurl }}/index.html#news" class="hover:text-white">お知らせ</a></li>
-                        <li><a href="{{ site.baseurl }}/pages/saiyou.html" class="hover:text-white">88卒採用</a></li>
-                        <li><a href="{{ site.baseurl }}/pages/intern.html" class="hover:text-white">89卒インターン</a></li>
+                        <li><a href="{{ site.baseurl }}/pages/saiyou.html" class="hover:text-white">採用情報</a></li>
                         <li><a href="{{ site.baseurl }}/pages/toiawase.html" class="hover:text-white">お問い合わせ</a></li>
                     </ul>
                 </div>
