@@ -5,11 +5,11 @@ title: Home
     <style>
         /* ヒーローセクションのグラデーション */
         .hero-gradient {
-            background: linear-gradient(90deg, #002A5B 0%, rgba(0, 42, 91, 0.8) 5%, rgba(0, 42, 91, 0.3) 10%);
+            background: linear-gradient(90deg, rgba(0, 42, 91, 0.94) 0%, rgba(0, 42, 91, 0.86) 34%, rgba(0, 42, 91, 0.2) 68%, rgba(0, 42, 91, 0.05) 100%);
         }
         /* ヒーロー背景画像用のクラス */
         .hero-background-image {
-            background-image: url('image/header_image.avif'); 
+            background-image: url('image/ssc-kirakira-hero.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -18,7 +18,7 @@ title: Home
         <!-- 2. メインビジュアル (ヒーローセクション) -->
         <section class="relative h-[60vh] min-h-[400px] max-h-[700px] w-full text-white overflow-hidden">
             <!-- 背景画像（hero-background-image クラスを適用） -->
-            <div class="absolute inset-0 w-full h-full object-cover object-center hero-background-image filter brightness-50"></div>
+            <div class="absolute inset-0 w-full h-full object-cover object-center hero-background-image"></div>
             
             <!-- グラデーションオーバーレイ -->
             <div class="absolute inset-0 hero-gradient"></div>
@@ -29,7 +29,7 @@ title: Home
                     確かな未来。<br>
                     あなたとわたしと。
                 </h1>
-                <p class="text-lg md:text-xl max-w-2xl">
+                <p class="text-lg md:text-xl max-w-2xl text-blue-50">
                     Sayoホールディングスの一角として確かな実力を持って、<br>
                     ちょっと眩しいITソリューションを提供します。
                 </p>
@@ -109,13 +109,13 @@ title: Home
                     
                     <!-- 事業カード 4 -->
                     <div class="group bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition duration-500">
-                        <img src="{{ '/image/seculity.webp' | relative_url }}" alt="セキュリティコンサルティング" class="w-full h-48 object-cover">
+                        <img src="{{ '/image/quantum-it-visual.jpg' | relative_url }}" alt="量子情報インテグレーション" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-heavy-blue mb-2">セキュリティコンサルティング</h3>
+                            <h3 class="text-xl font-bold text-heavy-blue mb-2">量子情報インテグレーション</h3>
                             <p class="text-gray-600 text-sm mb-4">
-                                高度なセキュリティ技術と知見で、お客様の事業活動をあらゆる脅威から守ります。
+                                トンネル効果セキュリティや重ね合わせ要件定義で、観測するまで不確定な課題に挑みます。
                             </p>
-                            <a href="pages/jigyounaiyou.html#security" class="font-semibold text-accent-blue group-hover:underline">詳細を見る</a>
+                            <a href="pages/jigyounaiyou.html#quantum" class="font-semibold text-accent-blue group-hover:underline">詳細を見る</a>
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@ title: Home
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                     <div class="p-6 bg-white rounded-lg shadow-lg border border-blue-50">
                         <h3 class="text-2xl font-bold text-heavy-blue mb-3">コード開発支援</h3>
                         <p class="text-gray-700 mb-4">
@@ -187,11 +187,16 @@ title: Home
                         <a href="pages/solucion.html#system-dev" class="font-semibold text-accent-blue hover:underline">詳細を見る &rarr;</a>
                     </div>
                     <div class="p-6 bg-white rounded-lg shadow-lg border border-cyan-100 md:col-span-2">
-                        <h3 class="text-2xl font-bold text-heavy-blue mb-3">量子IT改善</h3>
-                        <p class="text-gray-700 mb-4">
-                            トンネル効果セキュリティ、LUMOエネルギー利用型リファクタリングなど、不確定な現場課題をそれっぽく収束させます。
-                        </p>
-                        <a href="pages/solucion.html#quantum-it" class="font-semibold text-accent-blue hover:underline">詳細を見る &rarr;</a>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                            <img src="{{ '/image/quantum-it-visual.jpg' | relative_url }}" alt="量子IT改善のビジュアル" class="w-full h-64 object-cover rounded-lg border border-cyan-100">
+                            <div>
+                                <h3 class="text-2xl font-bold text-heavy-blue mb-3">量子IT改善</h3>
+                                <p class="text-gray-700 mb-4">
+                                    トンネル効果セキュリティ、LUMOエネルギー利用型リファクタリングなど、不確定な現場課題をそれっぽく収束させます。
+                                </p>
+                                <a href="pages/solucion.html#quantum-it" class="font-semibold text-accent-blue hover:underline">詳細を見る &rarr;</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,15 +205,14 @@ title: Home
         <!-- 7. 採用情報 (Recruitment) -->
         <section id="recruit" class="py-20 bg-gray-100">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row items-center justify-between bg-white p-10 rounded-lg shadow-lg gap-8">
-                    <div class="lg:w-3/5">
+                <div class="grid grid-cols-1 lg:grid-cols-2 bg-white rounded-lg shadow-lg overflow-hidden border border-blue-100">
+                    <img src="{{ '/image/recruit-kirakira.jpg' | relative_url }}" alt="SSC採用情報" class="w-full h-full min-h-[280px] object-cover">
+                    <div class="p-10 flex flex-col justify-center">
                         <h2 class="text-3xl font-bold text-heavy-blue mb-3">採用・インターン情報</h2>
                         <p class="text-lg text-gray-700">
                             新卒採用、中途採用、インターンシップを受付中です。あなたの「つながりたい」を、ここで実現しませんか。
                         </p>
-                    </div>
-                    <div class="text-center lg:text-right">
-                        <a href="pages/saiyou.html" class="inline-block bg-accent-blue text-white text-lg font-bold px-10 py-4 rounded-full hover:bg-opacity-80 transition duration-300 shadow-lg transform hover:scale-105">
+                        <a href="pages/saiyou.html" class="inline-block self-start mt-8 bg-accent-blue text-white text-lg font-bold px-10 py-4 rounded-full hover:bg-opacity-80 transition duration-300 shadow-lg transform hover:scale-105">
                             採用情報へ
                         </a>
                     </div>
