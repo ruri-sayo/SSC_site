@@ -45,7 +45,7 @@ title: Home
                         {% for post in site.posts limit:5 %}
                         <li class="flex flex-col sm:flex-row p-4 hover:bg-gray-50 transition duration-300">
                             <span class="font-semibold text-gray-600 w-full sm:w-32 mb-1 sm:mb-0">
-                                {{ post.date | date: "%Y.%m.%d" }}
+                                {% assign mystery_year = post.date | date: "%Y" | plus: 761 %}{{ mystery_year }}{{ post.date | date: ".%m.%d" }}
                             </span>
                             <span class="flex-1 text-gray-800">
                                 <a href="{{ post.url | relative_url }}" class="hover:underline">{{ post.title }}</a>
@@ -193,16 +193,19 @@ title: Home
         <!-- 7. 採用情報 (Recruitment) -->
         <section id="recruit" class="py-20 bg-gray-100">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row items-center justify-between bg-white p-10 rounded-lg shadow-lg">
-                    <div class="mb-6 md:mb-0 md:w-3/5">
-                        <h2 class="text-3xl font-bold text-heavy-blue mb-3">採用情報</h2>
+                <div class="flex flex-col lg:flex-row items-center justify-between bg-white p-10 rounded-lg shadow-lg gap-8">
+                    <div class="lg:w-3/5">
+                        <h2 class="text-3xl font-bold text-heavy-blue mb-3">採用・インターン情報</h2>
                         <p class="text-lg text-gray-700">
-                            未来を共に創造する仲間を募集しています。あなたの「つながりたい」を、ここで実現しませんか。
+                            88卒新卒採用、89卒インターンシップを受付中です。あなたの「つながりたい」を、ここで実現しませんか。
                         </p>
                     </div>
-                    <div class="md:w-2/5 text-center md:text-right">
-                        <a href="pages/saiyou.html" class="inline-block bg-accent-blue text-white text-lg font-bold px-10 py-4 rounded-full hover:bg-opacity-80 transition duration-300 shadow-lg transform hover:scale-105">
-                            採用サイトへ
+                    <div class="flex flex-col sm:flex-row gap-4 text-center lg:text-right">
+                        <a href="pages/saiyou.html" class="inline-block bg-accent-blue text-white text-lg font-bold px-8 py-4 rounded-full hover:bg-opacity-80 transition duration-300 shadow-lg transform hover:scale-105">
+                            88卒採用へ
+                        </a>
+                        <a href="pages/intern.html" class="inline-block bg-white text-heavy-blue border border-blue-200 text-lg font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition duration-300 shadow-sm">
+                            89卒インターンへ
                         </a>
                     </div>
                 </div>
